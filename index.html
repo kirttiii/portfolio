@@ -1,0 +1,1096 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kirti Chauhan | Portfolio</title>
+
+    <style>
+
+        /* ==============================
+           RESET & GENERAL STYLING
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+
+        /* ==============================
+           NAVIGATION
+        ============================== */
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.97);
+            border-bottom: 1px solid #ddd;
+        }
+
+        .navbar {
+            max-width: 1200px;
+            height: 75px;
+            margin: auto;
+            padding: 0 30px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 25px;
+            font-weight: 800;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: bold;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #777;
+        }
+
+
+        /* ==============================
+           HERO / HOME
+        ============================== */
+
+        .hero {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+
+            padding: 120px 10% 80px;
+
+            background: linear-gradient(
+                135deg,
+                #ffffff,
+                #eeeeee
+            );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .small-heading {
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 4px;
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 {
+            font-size: clamp(55px, 9vw, 105px);
+            line-height: 0.95;
+            font-weight: 900;
+            letter-spacing: -5px;
+        }
+
+        .hero h1 span {
+            color: #777;
+        }
+
+        .hero h2 {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .tagline {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .hero-description {
+            max-width: 650px;
+            margin-top: 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+        }
+
+        .btn {
+            padding: 13px 25px;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .primary-btn {
+            background: #222;
+            color: white;
+        }
+
+        .primary-btn:hover {
+            background: #555;
+        }
+
+        .secondary-btn {
+            border: 1px solid #222;
+        }
+
+        .secondary-btn:hover {
+            background: #222;
+            color: white;
+        }
+
+
+        /* ==============================
+           GENERAL SECTION
+        ============================== */
+
+        .section {
+            max-width: 1200px;
+            margin: auto;
+            padding: 110px 30px;
+        }
+
+        .section-heading {
+            margin-bottom: 60px;
+        }
+
+        .section-heading p {
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 3px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .section-heading h2 {
+            font-size: 48px;
+            line-height: 1;
+        }
+
+        .section-heading h2 span {
+            color: #777;
+        }
+
+
+        /* ==============================
+           ABOUT
+        ============================== */
+
+        .about-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 70px;
+            align-items: start;
+        }
+
+        .about-card {
+            background: #222;
+            color: white;
+            padding: 35px;
+            min-height: 250px;
+        }
+
+        .about-icon {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .about-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: #ccc;
+            font-size: 14px;
+        }
+
+        .about-text h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            margin-bottom: 18px;
+            color: #666;
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           SKILLS
+        ============================== */
+
+        .skills-section {
+            max-width: 100%;
+            background: #222;
+            color: white;
+        }
+
+        .skills-section .section-heading p {
+            color: #aaa;
+        }
+
+        .skills-section .section-heading h2 span {
+            color: #aaa;
+        }
+
+        .skills-container {
+            max-width: 1140px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .skill-card {
+            border: 1px solid #444;
+            padding: 35px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            background: #333;
+            transform: translateY(-5px);
+        }
+
+        .skill-number {
+            color: #999;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .skill-card h3 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .skill-card p {
+            color: #aaa;
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           PROJECTS
+        ============================== */
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 35px;
+
+            display: flex;
+            gap: 30px;
+
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+        }
+
+        .project-number {
+            font-size: 18px;
+            font-weight: bold;
+            color: #999;
+        }
+
+        .project-category {
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: bold;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .project-content h3 {
+            font-size: 24px;
+            line-height: 1.2;
+            margin-bottom: 15px;
+        }
+
+        .project-content > p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+        }
+
+        .project-tags span {
+            border: 1px solid #ddd;
+            padding: 5px 10px;
+            font-size: 11px;
+            color: #555;
+        }
+
+
+        /* ==============================
+           CONTACT
+        ============================== */
+
+        .contact-section {
+            max-width: 100%;
+            background: #f1f1f1;
+        }
+
+        .contact-container {
+            max-width: 1140px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 80px;
+        }
+
+        .contact-info h3 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info > p {
+            max-width: 400px;
+            color: #666;
+        }
+
+        .email-box {
+            margin-top: 35px;
+            padding-left: 20px;
+            border-left: 3px solid #222;
+        }
+
+        .email-box span {
+            display: block;
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .email-box a {
+            font-weight: bold;
+            font-size: 15px;
+        }
+
+        .email-box a:hover {
+            text-decoration: underline;
+        }
+
+
+        /* ==============================
+           CONTACT FORM
+        ============================== */
+
+        .contact-form {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 7px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px;
+
+            border: 1px solid #ddd;
+            outline: none;
+
+            font-family: inherit;
+            font-size: 14px;
+
+            transition: 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #222;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+        }
+
+        .submit-btn {
+            border: none;
+            background: #222;
+            color: white;
+
+            padding: 14px 25px;
+
+            font-size: 13px;
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #555;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            background: #111;
+            color: white;
+            text-align: center;
+            padding: 45px 20px;
+        }
+
+        .footer-content h3 {
+            font-size: 22px;
+            letter-spacing: 2px;
+        }
+
+        .footer-content p {
+            color: #999;
+            margin-top: 8px;
+            font-size: 14px;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            font-size: 12px !important;
+            color: #666 !important;
+        }
+
+
+        /* ==============================
+           RESPONSIVE DESIGN
+        ============================== */
+
+        @media (max-width: 900px) {
+
+            .nav-links {
+                gap: 15px;
+            }
+
+            .about-container {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                height: auto;
+                padding: 18px 20px;
+
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 12px;
+            }
+
+            .hero {
+                padding: 150px 25px 80px;
+            }
+
+            .hero h1 {
+                font-size: 58px;
+                letter-spacing: -3px;
+            }
+
+            .hero h2 {
+                font-size: 18px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .section {
+                padding: 80px 20px;
+            }
+
+            .section-heading h2 {
+                font-size: 38px;
+            }
+
+            .project-card {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .contact-form {
+                padding: 25px;
+            }
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ==============================
+         NAVIGATION
+    ============================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <div class="logo">
+                KIRTI.
+            </div>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+    <!-- ==============================
+         HOME
+    ============================== -->
+
+    <section id="home" class="hero">
+
+        <div class="hero-content">
+
+            <p class="small-heading">
+                HELLO, I'M
+            </p>
+
+            <h1>
+                KIRTI <span>CHAUHAN</span>
+            </h1>
+
+            <h2>
+                Student | CSE - AI/ML Engineering
+            </h2>
+
+            <p class="tagline">
+                Aspiring Data Analyst &amp; AI/ML Professional
+            </p>
+
+            <p class="hero-description">
+                Passionate about data, artificial intelligence, machine
+                learning, and developing intelligent solutions to
+                real-world problems.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn primary-btn">
+                    View My Projects
+                </a>
+
+                <a href="#contact" class="btn secondary-btn">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         ABOUT
+    ============================== -->
+
+    <section id="about" class="section">
+
+        <div class="section-heading">
+
+            <p>
+                GET TO KNOW ME
+            </p>
+
+            <h2>
+                About <span>Me</span>
+            </h2>
+
+        </div>
+
+
+        <div class="about-container">
+
+            <div class="about-card">
+
+                <div class="about-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    Education
+                </h3>
+
+                <p>
+                    JSS University
+                    <br>
+                    CSE - AI/ML Engineering
+                    <br>
+                    Second Year
+                </p>
+
+            </div>
+
+
+            <div class="about-text">
+
+                <h3>
+                    I'm Kirti Chauhan
+                </h3>
+
+                <p>
+                    I am a second-year Computer Science Engineering student
+                    specializing in Artificial Intelligence and Machine
+                    Learning at JSS University.
+                </p>
+
+                <p>
+                    I am an aspiring Data Analyst and AI/ML professional
+                    with a strong interest in working with data, building
+                    predictive models, and solving real-world problems
+                    using technology.
+                </p>
+
+                <p>
+                    I am continuously developing my technical skills in
+                    programming, databases, data analysis, and machine
+                    learning while exploring new technologies and projects.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         SKILLS
+    ============================== -->
+
+    <section id="skills" class="section skills-section">
+
+        <div class="section-heading">
+
+            <p>
+                WHAT I WORK WITH
+            </p>
+
+            <h2>
+                My <span>Skills</span>
+            </h2>
+
+        </div>
+
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    01
+                </div>
+
+                <h3>
+                    Python
+                </h3>
+
+                <p>
+                    Programming, data analysis, and AI/ML development.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    02
+                </div>
+
+                <h3>
+                    SQL
+                </h3>
+
+                <p>
+                    Working with databases, queries, and data management.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="skill-number">
+                    03
+                </div>
+
+                <h3>
+                    C / C++
+                </h3>
+
+                <p>
+                    Programming fundamentals, problem solving,
+                    and algorithms.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         PROJECTS
+    ============================== -->
+
+    <section id="projects" class="section">
+
+        <div class="section-heading">
+
+            <p>
+                MY RECENT WORK
+            </p>
+
+            <h2>
+                Featured <span>Projects</span>
+            </h2>
+
+        </div>
+
+
+        <div class="projects-container">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    01
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        AI / MACHINE LEARNING
+                    </p>
+
+                    <h3>
+                        Para Analyst AI Model
+                    </h3>
+
+                    <p>
+                        An AI-based project focused on applying intelligent
+                        techniques to analyze information and support
+                        data-driven insights.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>AI</span>
+                        <span>ML</span>
+                        <span>Python</span>
+                        <span>Data Analysis</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <div class="project-number">
+                    02
+                </div>
+
+                <div class="project-content">
+
+                    <p class="project-category">
+                        PREDICTIVE ANALYTICS
+                    </p>
+
+                    <h3>
+                        Cybercrime Cash Withdrawal Predictive Model
+                    </h3>
+
+                    <p>
+                        A predictive modeling project designed to analyze
+                        patterns in cash withdrawal data and identify
+                        potentially suspicious or cybercrime-related
+                        transactions.
+                    </p>
+
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Prediction</span>
+                        <span>Data Analysis</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         CONTACT
+    ============================== -->
+
+    <section id="contact" class="section contact-section">
+
+        <div class="section-heading">
+
+            <p>
+                LET'S CONNECT
+            </p>
+
+            <h2>
+                Contact <span>Me</span>
+            </h2>
+
+        </div>
+
+
+        <div class="contact-container">
+
+
+            <div class="contact-info">
+
+                <h3>
+                    Let's Talk
+                </h3>
+
+                <p>
+                    Interested in connecting, collaborating, or discussing
+                    AI/ML and data-related projects? Feel free to get in touch.
+                </p>
+
+
+                <div class="email-box">
+
+                    <span>
+                        EMAIL
+                    </span>
+
+                    <a href="mailto:kirtiii.work@gmail.com">
+                        kirtiii.work@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT FORM -->
+
+            <form class="contact-form">
+
+                <div class="form-group">
+
+                    <label for="name">
+                        YOUR NAME
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your name"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="email">
+                        YOUR EMAIL
+                    </label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="subject">
+                        SUBJECT
+                    </label>
+
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter subject"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="message">
+                        MESSAGE
+                    </label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="6"
+                        placeholder="Write your message..."
+                        required
+                    ></textarea>
+
+                </div>
+
+
+                <button type="submit" class="submit-btn">
+                    Send Message →
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- ==============================
+         FOOTER
+    ============================== -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <h3>
+                KIRTI CHAUHAN
+            </h3>
+
+            <p>
+                Aspiring Data Analyst &amp; AI/ML Professional
+            </p>
+
+            <p class="copyright">
+                © 2026 Kirti Chauhan. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
+```
