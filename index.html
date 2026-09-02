@@ -1,147 +1,494 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Kirti Chauhan - Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Kirti Chauhan | AI/ML Student</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+
+        * {
             margin: 0;
-            background-color: #f2f2f2;
-            color: #222;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+        }
+
+        /* NAVIGATION */
+
         nav {
-            background-color: #222;
-            padding: 15px;
-            text-align: right;
+            height: 70px;
+            background: #0f172a;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 9%;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .logo {
+            color: white;
+            font-size: 23px;
+            font-weight: bold;
+        }
+
+        .logo span {
+            color: #38bdf8;
         }
 
         nav a {
-            color: white;
+            color: #cbd5e1;
             text-decoration: none;
-            margin: 15px;
+            margin-left: 28px;
+            font-size: 14px;
         }
 
-        .container {
-            text-align: center;
-            padding: 45px 20px;
+        nav a:hover {
+            color: #38bdf8;
         }
 
-        h1 {
-            font-size: 40px;
+        /* MAIN */
+
+        main {
+            max-width: 1050px;
+            margin: auto;
+            padding: 0 30px;
+        }
+
+        /* HERO */
+
+        .hero {
+            min-height: 390px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .small-title {
+            color: #0284c7;
+            font-size: 14px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            color: #0f172a;
+            margin-bottom: 8px;
+        }
+
+        .hero h2 {
+            font-size: 24px;
+            font-weight: normal;
+            color: #475569;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            max-width: 650px;
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        .buttons {
+            margin-top: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 11px 20px;
+            margin-right: 10px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .primary {
+            background: #0284c7;
+            color: white;
+        }
+
+        .primary:hover {
+            background: #0369a1;
+        }
+
+        .secondary {
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            background: white;
+        }
+
+        .secondary:hover {
+            border-color: #0284c7;
+            color: #0284c7;
+        }
+
+        /* SECTIONS */
+
+        section {
+            padding: 35px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .section-heading p {
+            color: #0284c7;
+            font-size: 12px;
+            font-weight: bold;
+            letter-spacing: 2px;
             margin-bottom: 5px;
         }
 
-        h2 {
-            color: #444;
+        .section-heading h2 {
+            font-size: 27px;
+            color: #0f172a;
         }
 
-        .tagline {
-            font-size: 20px;
-            color: #555;
+        /* ABOUT */
+
+        .about-text {
+            max-width: 850px;
+            color: #64748b;
+            font-size: 15px;
         }
 
-        section {
-            margin: 25px auto;
-            max-width: 800px;
-        }
+        /* PROJECTS */
 
         .projects {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
 
         .project {
             background: white;
-            padding: 20px;
-            width: 300px;
-            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            padding: 25px;
+            border-radius: 10px;
         }
+
+        .project-number {
+            color: #0284c7;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .project h3 {
+            margin: 10px 0;
+            color: #0f172a;
+            font-size: 19px;
+        }
+
+        .project p {
+            color: #64748b;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        /* SKILLS */
 
         .skills {
-            font-weight: bold;
-            word-spacing: 15px;
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        footer {
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #222;
-            color: white;
+        .skill {
+            background: white;
+            border: 1px solid #dbeafe;
+            padding: 10px 18px;
+            border-radius: 6px;
+            color: #0369a1;
+            font-size: 14px;
+            font-weight: bold;
         }
+
+        /* CONTACT */
+
+        .contact-box {
+            background: #0f172a;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .contact-box h2 {
+            margin-bottom: 8px;
+        }
+
+        .contact-box p {
+            color: #94a3b8;
+            font-size: 14px;
+        }
+
+        .email {
+            color: #38bdf8;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #020617;
+            text-align: center;
+            padding: 18px;
+            color: #64748b;
+            font-size: 12px;
+        }
+
+        /* MOBILE */
+
+        @media (max-width: 700px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 11px;
+            }
+
+            main {
+                padding: 0 20px;
+            }
+
+            .hero {
+                min-height: 330px;
+            }
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+            .hero h2 {
+                font-size: 20px;
+            }
+
+            .projects {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-box {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
     </style>
 </head>
 
 <body>
 
+    <!-- NAVIGATION -->
+
     <nav>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
+
+        <div class="logo">
+            Kirti<span>.</span>
+        </div>
+
+        <div>
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+
     </nav>
 
-    <div class="container">
 
-        <h1>KIRTI CHAUHAN</h1>
+    <main>
 
-        <h2>Student | CSE - AI/ML</h2>
+        <!-- HERO SECTION -->
 
-        <p class="tagline">
-            Aspiring Data Analyst & AI/ML Professional
-        </p>
+        <div class="hero">
+
+            <p class="small-title">HELLO, I'M</p>
+
+            <h1>KIRTI CHAUHAN</h1>
+
+            <h2>CSE — Artificial Intelligence & Machine Learning</h2>
+
+            <p>
+                An aspiring Data Analyst and AI/ML professional
+                currently exploring programming, data and
+                machine learning to build practical solutions.
+            </p>
+
+            <div class="buttons">
+
+                <a href="#projects" class="btn primary">
+                    View My Work
+                </a>
+
+                <a href="#contact" class="btn secondary">
+                    Contact Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- ABOUT -->
 
         <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am a second-year CSE AI/ML student at JSS University.
-                I am interested in Data Analytics, Artificial Intelligence
-                and Machine Learning.
+
+            <div class="section-heading">
+                <p>01 — ABOUT</p>
+                <h2>About Me</h2>
+            </div>
+
+            <p class="about-text">
+
+                I am a second-year Computer Science student specializing
+                in Artificial Intelligence and Machine Learning at
+                JSS University. I am interested in Data Analytics,
+                Artificial Intelligence and Machine Learning.
+
+                <br><br>
+
+                Currently, I am strengthening my programming and
+                problem-solving skills while working on projects
+                that allow me to apply what I learn in real-world
+                situations.
+
             </p>
+
         </section>
 
+
+        <!-- PROJECTS -->
+
         <section id="projects">
-            <h2>My Projects</h2>
+
+            <div class="section-heading">
+                <p>02 — PROJECTS</p>
+                <h2>Featured Work</h2>
+            </div>
+
 
             <div class="projects">
 
                 <div class="project">
+
+                    <span class="project-number">
+                        PROJECT 01
+                    </span>
+
                     <h3>Para Analyst AI Model</h3>
+
                     <p>
-                        An AI-based project developed to analyze
-                        and process data using machine learning.
+                        An AI-based project focused on analysing
+                        information and exploring machine learning
+                        techniques to generate useful insights.
                     </p>
+
                 </div>
 
+
                 <div class="project">
+
+                    <span class="project-number">
+                        PROJECT 02
+                    </span>
+
                     <h3>Cybercrime Cash Withdrawal Prediction</h3>
+
                     <p>
-                        A predictive model designed to identify
-                        patterns in cybercrime cash withdrawals.
+                        A predictive machine learning project that
+                        studies cash withdrawal patterns to identify
+                        potentially suspicious activity.
                     </p>
+
                 </div>
 
             </div>
+
         </section>
+
+
+        <!-- SKILLS -->
 
         <section id="skills">
-            <h2>Skills</h2>
-            <p class="skills">
-                Python | SQL | C | C++
-            </p>
+
+            <div class="section-heading">
+                <p>03 — SKILLS</p>
+                <h2>Technical Skills</h2>
+            </div>
+
+            <div class="skills">
+
+                <div class="skill">Python</div>
+                <div class="skill">SQL</div>
+                <div class="skill">C</div>
+                <div class="skill">C++</div>
+
+            </div>
+
         </section>
+
+
+        <!-- CONTACT -->
 
         <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: kirtiii.work@gmail.com</p>
+
+            <div class="contact-box">
+
+                <div>
+
+                    <h2>Let's Connect</h2>
+
+                    <p>
+                        Interested in collaboration, projects
+                        or learning opportunities?
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <a
+                        class="email"
+                        href="mailto:kirtiii.work@gmail.com">
+                        kirtiii.work@gmail.com
+                    </a>
+
+                </div>
+
+            </div>
+
         </section>
 
-    </div>
+    </main>
+
+
+    <!-- FOOTER -->
 
     <footer>
-        © 2026 Kirti Chauhan
+
+        © 2026 Kirti Chauhan · CSE AI/ML Student
+
     </footer>
 
 </body>
